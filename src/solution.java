@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class solution {
 
 
@@ -5,9 +7,25 @@ public class solution {
         int[] numbers = {82, 24, 94, 22, 42};
         int result = sum(numbers);
         System.out.println("Sum of the numbers: " + result);
+
+
+        int answer = largest(numbers);
+        System.out.println("The largest number is: " + answer);
+
+
+        int[] newArray = reverse(numbers);
+        System.out.println("Our previous array was: " + Arrays.toString(numbers));
+        System.out.println("Our reversed array is: " + Arrays.toString(newArray));
+
+
+
+
     }
 
 
+//BELOW CODES ARE METHODS
+
+    //1.sum of the array
     public static int sum(int[] numbers) {
 
 
@@ -16,6 +34,51 @@ public class solution {
             sum = sum + numbers[i];
         }
         return sum;
+    }
+
+
+    // 2.largest element of the array
+    public static int largest(int[] numbers) {
+        int largest = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > largest) {
+                largest = numbers[i];
+            }
+
+        }
+        return largest;
+    }
+
+   /* //3.Finding Even or odd, counting as well
+
+    public static int evenOdds(int[] numbers) {
+        int evenCount = 0, oddCount = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                System.out.println(numbers[i] + "is even");
+                evenCount++;
+            }
+            else {
+                System.out.println(numbers[i] + "is odd");
+              oddCount++;
+            }
+
+        }
+        return
+    }*/
+
+    //4. Reverse the element of array.
+
+    public static int[] reverse(int[] numbers){
+        int[] reverseArray= new int[numbers.length];
+
+
+           for(int i=0; i<reverseArray.length; i++){
+               reverseArray[i] = numbers[numbers.length-1-i];
+           }
+
+
+        return reverseArray;
     }
 
 }
