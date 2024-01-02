@@ -17,7 +17,9 @@ public class solution {
         System.out.println("Our previous array was: " + Arrays.toString(numbers));
         System.out.println("Our reversed array is: " + Arrays.toString(newArray));
 
-
+        int number= 5;
+        long factorial = CalculateFactorial(number);
+        System.out.println("Factorial of " + number + " is: " + factorial);
 
 
     }
@@ -81,7 +83,23 @@ public class solution {
         return reverseArray;
     }
 
+    // 5. factorial using recursion
+
+    public static long CalculateFactorial(int n){
+
+
+        if(n==0|| n==1){
+            return 1;
+        }
+        else {
+            return n*CalculateFactorial(n-1);
+        }
+
+    }
+
 }
+
+
 
 
 
