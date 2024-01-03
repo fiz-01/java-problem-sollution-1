@@ -21,7 +21,17 @@ public class solution {
         long factorial = CalculateFactorial(number);
         System.out.println("Factorial of " + number + " is: " + factorial);
 
+        //6.Palindrome check using char string
 
+        String PalindromeChecker = "deleveled";
+        boolean isPalindrome = CheckPalindrome(PalindromeChecker.toCharArray());
+
+        if(isPalindrome){
+            System.out.println( PalindromeChecker +": " + " yes! It's a palindrome");
+        }
+        else {
+            System.out.println(PalindromeChecker + ": " + "NO! It's not a palindrome");
+        }
     }
 
 
@@ -96,10 +106,27 @@ public class solution {
         }
 
     }
+    //6.Palindrome check using char string
 
+    public static boolean CheckPalindrome(char[] input){
+       int PalindromeStart = 0;
+       int PalindromeEnd = input.length-1;
+       while (PalindromeEnd>=PalindromeStart){
+
+           char leftChar = Character.toLowerCase(input[PalindromeStart]);
+           char rightChar = Character.toLowerCase(input[PalindromeEnd]);
+
+           if (leftChar!= rightChar) {
+               return false;
+
+           }
+           PalindromeStart++;
+           PalindromeEnd--;
+       }
+       return true;
 }
 
-
+}
 
 
 
